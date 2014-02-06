@@ -65,6 +65,7 @@
     vertical-align: bottom;
   }
   #compose_button img:hover{
+    cursor: pointer;
     border-right: 1px #6AAFEA solid;
   }
   .send_button{
