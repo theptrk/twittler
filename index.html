@@ -8,7 +8,7 @@
     <h1>Twittler</h1>
     
     <div>
-      <a href="" id="tweet_alerts"></a>
+      <a href="" id="tweet_alerts">Up to date</a>
     </div>
     <div id="tweet_box"></div>
 
@@ -33,7 +33,10 @@
         
         var checkNewTweets = function() {
           var diff = streams.home.length - (index+1);
-          if (diff > 0) {
+          if (diff === 1) {
+            $('#tweet_alerts').text(diff + " new tweet")  
+          };
+          if (diff > 1) {
             $('#tweet_alerts').text(diff + " new tweets")  
           };
           return diff 
@@ -46,7 +49,11 @@
         // Could instead call checkNewTweets in data_generator.js
         setInterval(checkNewTweets, 750);
 
-
+        $('#tweet_alerts').on('click', function(event){
+          event.preventDefault();
+          $('#tweet_alerts').text("Up to date")  
+          showNewTweets();
+        });
 
       });
 
