@@ -4,6 +4,7 @@
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
     <link rel="stylesheet" type="text/css" href="meyer.css">
+    <link rel="stylesheet" type="text/css" href="twittler.css">
   </head>
   <body>
     <div id="page_container">
@@ -75,10 +76,11 @@
           for (var i = index; i < streams.home.length; i++) {
             console.log("adding streams.home at index: " + index)
             var tweet = streams.home[index];
-            var $tweet = $('<div></div>');
+            var $tweet = $('<div class="tweet_card"></div>');
             $tweet.append(
-              '<a href="" class="user_link">@' + tweet.user + '</a>: ' +
-              tweet.message +'<br>'+ tweet.created_at);
+              '<div class="card_username"><a href="" class="user_link">@' + tweet.user + '</a></div>' +
+              '<div class="card_date">'+ tweet.created_at + '</div>' +
+              '<div class="card_message">' + tweet.message +'<div>');
             $tweet.prependTo($box);
             index += 1;
           };  
@@ -89,10 +91,11 @@
           for (var i = 0; i < streams.users[username].length; i++) {
             console.log("adding streams.users for: " + username)
             var tweet = streams.users[username][i];
-            var $tweet = $('<div></div>');
+            var $tweet = $('<div class="tweet_card"></div>');
             $tweet.append(
-              '<a href="" class="user_link">@' + tweet.user + '</a>: ' +
-              tweet.message +'<br>'+ tweet.created_at);
+              '<div class="card_username"><a href="" class="user_link">@' + tweet.user + '</a></div>' +
+              '<div class="card_date">'+ tweet.created_at + '</div>' +
+              '<div class="card_message">' + tweet.message +'<div>');
             $tweet.prependTo($box);
             user_index += 1;
           };
@@ -127,11 +130,11 @@
           var username = $(this).text().slice(1)
           $box.html('');
           $("#tweet_alerts").hide()
-          $("#user_title").text(username)
+          $("#user_title").text("Tweets from: " + username)
           showUserTweets(username);
         });
 
-        $('body').on('click', '#home' ,function(event){
+        $('body').on('click', '#home a' ,function(event){
           event.preventDefault();
           $("#tweet_alerts").show()
           $box.html('');
