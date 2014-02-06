@@ -65,7 +65,7 @@
 
         // Periodically check for new tweets 
         // Could instead call checkNewTweets in data_generator.js
-        setInterval(checkNewTweets, 750);
+        var checkAll = setInterval(checkNewTweets, 750);
 
         $('#tweet_alerts').on('click', function(event){
           event.preventDefault();
