@@ -3,16 +3,65 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <link rel="stylesheet" type="text/css" href="meyer.css">
   </head>
   <body>
-    <h1 id="home"><a href="">Twittler</a></h1>
-    
-    <h2 id="user_title"></h2>
+    <div id="page_container">
 
-    <div>
-      <button id="tweet_alerts">Up to date</button>
+      <!-- Start Top Deck -->
+      <div id="top_deck">
+
+        <div id="home_deck">
+          <h1 id="home"><a href="">Twittler</a></h1>
+        </div>
+        <div id="compose_button">
+          <h1 ></h1>
+          <img id="new_tweet" src="twittercompose_tiny.png">
+        </div>
+
+        <div id="compose_deck">
+          <div id="dinosaur"><img src="dino_shrunk.png"></div>
+          <div id="compose_area">
+            <h1>compose new tweet</h1>
+            <input id="input_username" placeholder=" Username"> </input>
+            <p><textarea id="input_message" placeholder=" Tweet or ROAR!!!"></textarea></p>
+            <button class="send_button"> Send</button>
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- Start Content -->
+      <div id="content_container">
+        <div id="content_left">
+          Put filler here at some point.
+        </div>
+
+        <div id="content_right">
+          <div id="updates">
+            <h2 id="user_title"></h2>
+          <button id="tweet_alerts">Up to date</button>
+          </div>
+
+          <div id="tweet_box">
+            <!-- <div class="tweet_card">
+              <div class="card_username">Username</div>
+              <div class="card_date">Date</div>
+              <div class="card_message" rows="4" columns="12">Message</div>
+            </div> -->
+          </div>
+        </div> <!-- end content_right -->
+      </div>
+
     </div>
-    <div id="tweet_box"></div>
+
+    <script type="text/javascript">
+      $('#compose_deck').hide()
+      $('#compose_button').on('click', '#new_tweet', function(){
+        $('#compose_deck').slideToggle()
+      })
+
+    </script>
 
     <script>
 
@@ -95,5 +144,6 @@
       });
 
     </script>
+
   </body>
 </html>
