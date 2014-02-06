@@ -1,0 +1,122 @@
+
+#page_container {
+  width: 800px;
+  min-height: 600px;
+  margin: 0 auto;
+  font-family: Helvetica, Georgia, Times;
+}
+#page_container > div { 
+  width: 750px;
+  margin: 0 auto;
+}
+#top_deck{
+  padding: 25px 0px 5px 0px;
+  border-bottom: 1px #6AAFEA solid;
+}
+  h1 { font-size: 2em; font-weight: bold;}
+
+  #home_deck{
+    display: inline-block;
+    width: 350px;
+  }
+    #home_deck a{
+      text-decoration: none;
+      font-weight: 200;
+      color: #6AAFEA;
+    }
+
+#compose_deck { 
+  margin-top: 10px;
+  border-top: 1px solid #6AAFEA;
+}
+  #compose_deck > div { display: inline-block;}
+
+  #dinosaur {
+    width: 300px
+  }
+  #compose_area {
+    width: 440px;
+    vertical-align: top;
+  }
+    #compose_area h1 {
+      text-align: right;
+      margin-right: 25px;
+    }
+  #compose_area input { 
+    border-radius: 3px;
+    border: none;
+    border: 1px black solid;
+    margin: 15px 0px 5px 50px; 
+    font-size: 1.15em;
+    text-align: center;
+  }
+  #compose_area textarea{
+    resize:none;
+    border-radius: 3px;
+    margin: 5px 0px 5px 50px; 
+    font-size: 1.15em;
+    width: 80%;
+    height: 90px;
+  }
+  #compose_button{
+    display: inline-block;
+    width: 375px;
+    text-align: right;
+    vertical-align: bottom;
+  }
+  #compose_button img:hover{
+    border-right: 1px #6AAFEA solid;
+  }
+  .send_button{
+    border: none;
+    background-color: #6AAFEA;
+    color: white;
+    text-align: center;
+    font-weight: 100;
+    font-size: 1.0em;
+    width: 70px;
+    height: 30px;
+    margin-left: 320px;
+  }
+
+#content_container {}
+  #content_container > div { display: inline-block;}
+  #content_left{
+    width: 250px;
+    min-height: 300px;
+    font-size: 4em;
+    font-weight: 600;
+    background-color: #FDFDFD;
+    color: white;
+  }
+  #content_right{
+    width: 490px;
+    vertical-align: top;
+    min-height: 300px;
+  }
+    #tweet_alerts{
+      margin: 10px 0px 10px 200px;
+    }
+
+    #tweet_box {
+      width: 100%;
+      min-height: 200px;
+      padding: 1px;
+    }
+      .tweet_card{
+        background-color: white;
+        width: 94%;
+        margin: 10px auto;
+        padding: 1%;
+        border: 1px #eee solid;
+      } 
+        .tweet_card > div {
+          display: inline-block;
+          padding: 5px;
+        }
+        .card_username { width: 180px}
+        .card_date {
+          width: 250px;
+          color: grey;
+          text-align: right;
+        }
