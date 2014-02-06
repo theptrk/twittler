@@ -25,7 +25,8 @@
             console.log("adding streams.home at index: " + index)
             var tweet = streams.home[index];
             var $tweet = $('<div></div>');
-            $tweet.append('@' + tweet.user + ': ' + 
+            $tweet.append(
+              '<a href="" class="user_link">@' + tweet.user + '</a>: ' +
               tweet.message +'<br>'+ tweet.created_at);
             $tweet.prependTo($box);
             index += 1;
@@ -54,6 +55,12 @@
           event.preventDefault();
           $('#tweet_alerts').text("Up to date")  
           showNewTweets();
+        });
+
+        $('.user_link').on('click', function(event){
+          event.preventDefault();
+          var username = $(this).text().slice(1)
+          console.log(username)
         });
 
       });
