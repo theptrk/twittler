@@ -7,8 +7,10 @@
   <body>
     <h1>Twittler</h1>
     
+    <h2 id="user_title"></h2>
+
     <div>
-      <a href="" id="tweet_alerts">Up to date</a>
+      <button id="tweet_alerts">Up to date</button>
     </div>
     <div id="tweet_box"></div>
 
@@ -33,6 +35,20 @@
           };  
         };
         
+        var showUserTweets = function(username) {
+          var user_index = 0
+          for (var i = 0; i < streams.users[username].length; i++) {
+            console.log("adding streams.users for: " + username)
+            var tweet = streams.users[username][i];
+            var $tweet = $('<div></div>');
+            $tweet.append(
+              '<a href="" class="user_link">@' + tweet.user + '</a>: ' +
+              tweet.message +'<br>'+ tweet.created_at);
+            $tweet.prependTo($box);
+            user_index += 1;
+          };
+        };
+
         var checkNewTweets = function() {
           var diff = streams.home.length - (index+1);
           if (diff === 1) {
@@ -57,10 +73,13 @@
           showNewTweets();
         });
 
-        $('.user_link').on('click', function(event){
+        $('#tweet_box').on('click', '.user_link' ,function(event){
           event.preventDefault();
           var username = $(this).text().slice(1)
-          console.log(username)
+          $box.html('');
+          $("#tweet_alerts").toggle()
+          $("#user_title").text(username)
+          showUserTweets(username);
         });
 
       });
