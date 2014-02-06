@@ -25,7 +25,8 @@
             console.log("adding streams.home at index: " + index)
             var tweet = streams.home[index];
             var $tweet = $('<div></div>');
-            $tweet.text('@' + tweet.user + ': ' + tweet.message);
+            $tweet.append('@' + tweet.user + ': ' + 
+              tweet.message +'<br>'+ tweet.created_at);
             $tweet.prependTo($box);
             index += 1;
           };  
