@@ -88,13 +88,14 @@
     font-size: 4em;
     font-weight: 600;
     background-color: #FDFDFD;
-    color: white;
+    color: black;
   }
   #content_right{
     width: 490px;
     vertical-align: top;
     min-height: 300px;
   }
+    #user_title {margin:13px;}
     #tweet_alerts{
       margin: 10px 0px 10px 200px;
     }
