@@ -13,7 +13,7 @@
       <div id="top_deck">
 
         <div id="home_deck">
-          <h1 id="home"><a href="">Twittler</a></h1>
+          <h1 class="home"><a href="">Twittler</a></h1>
         </div>
         <div id="compose_button">
           <h1 ></h1>
@@ -40,7 +40,7 @@
 
         <div id="content_right">
           <div id="updates">
-            <h2 id="user_title"></h2>
+            <h2 id="user_title">Tweets from: all</h2>
           <button id="tweet_alerts">Up to date</button>
           </div>
 
@@ -130,15 +130,16 @@
           var username = $(this).text().slice(1)
           $box.html('');
           $("#tweet_alerts").hide()
-          $("#user_title").text("Tweets from: " + username)
+          $("#user_title").html("Tweets from: " + 
+            '<a href="" id="back" >all</a> > ' + username)
           showUserTweets(username);
         });
 
-        $('body').on('click', '#home a' ,function(event){
+        $('body').on('click', '.home a' ,function(event){
           event.preventDefault();
           $("#tweet_alerts").show()
           $box.html('');
-          $("#user_title").text("")
+          //$("#user_title").text("")
 
           index = 0; 
           $('#tweet_alerts').trigger('click')
