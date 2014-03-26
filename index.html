@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="jquery.js"></script>
-    <script src="data_generator.js"></script>
     <link rel="stylesheet" type="text/css" href="meyer.css">
     <link rel="stylesheet" type="text/css" href="twittler.css">
   </head>
@@ -56,6 +54,10 @@
 
     </div> <!-- end page container -->
 
+    <script src="jquery.js"></script>
+    <script src="moment.min.js"></script>
+    <script src="data_generator.js"></script>
+
     <script type="text/javascript">
       $('#compose_deck').hide()
       $('#count').hide()
@@ -79,7 +81,7 @@
             var $tweet = $('<div class="tweet_card"></div>');
             $tweet.append(
               '<div class="card_username"><a href="" class="user_link link">@' + tweet.user + '</a></div>' +
-              '<div class="card_date">'+ tweet.created_at + '</div>' +
+              '<div class="card_date">'+moment( tweet.created_at ).fromNow()+ '</div>' +
               '<div class="card_message">' + tweet.message +'<div>');
             $tweet.prependTo($box);
             index += 1;
@@ -95,7 +97,7 @@
             $tweet.append(
               '<div class="card_username"><a href="" class="user_link link">@' + tweet.user + '</a></div>' +
               '<div class="card_date">'+ tweet.created_at + '</div>' +
-              '<div class="card_message">' + tweet.message +'<div>');
+              '<div class="card_message">' + moment( tweet.created_at ).fromNow() +'<div>');
             $tweet.prependTo($box);
             user_index += 1;
           };
